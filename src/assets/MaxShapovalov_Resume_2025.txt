@@ -1,0 +1,92 @@
+MAX SHAPOVALOV
+React Developer
+WORK EXPERIENCE
+Down Syndrome Foundation Help321
+BDes
+
+Digital Futures
+Certificate
+React
+
+Next.js App Router
+
+TypeScript
+
+JavaScript ESNext
+
+TanStack Query
+
+Redux Toolkit
+
+React Hook Form + Zod
+
+Tailwind CSS
+
+Jest
+
+React Testing Library
+
+REST APIs
+
+GraphQL
+
+Node.js & Express
+
+Vercel
+
+Git & GitHub Actions
+
+Accessibility WCAG 2.2
+Partnered with a non-profit to ship a 20+ page site from UX
+prototype to production.
+
+Built a resource finder for Canada with custom filters, API
+integrations, and query logic.
+
+Implemented donation flows and admin-friendly content
+updates; accessibility-first.
+OCAD University
+University of Helsinki
+Web Developer React & WordPress
+PROJECTS
+SKILLS
+EDUCATION
+SUMMARY
+Toronto, ON
+Helsinki, Finland
+maximsdev@gmail.com (416) 579-3253 sitecraftersdev.com
+LinkedIn GitHub Victoria, BC
+React/Next.js specialist.
+Converts prototypes into
+scalable, production UI with
+speed and care.
+2018-2022
+Full Stack Developer
+Union Technologies Inc.
+December 2022 November 2025 Toronto, ON
+Built a React /TypeScript CRM with lead & client
+management; Node backend, Tailwind UI.
+
+Produced 4,000+ qualified leads by engineering a Node/
+TypeScript pipeline for public records and integrating it with
+the React CRM.
+
+Shipped Next.js features from design to prod with React/
+TypeScript, TanStack Query, Tailwind; deployed on Vercel/
+Cloudflare via GitHub Actions.
+
+Built vote-tracking software for union elections with realtime tallies and admin dashboards (React & Node).
+
+Managed launches for 200+ domains: DNS and SSL setup,
+redirects, and go-live without downtime.
+JavaScript Developer Intern
+OPHEA
+January 2021 November 2022 Toronto, ON
+Built React /TypeScript tools and a Node.js script to
+automate updates for 900+ Ontario schools.
+
+Automated a data-entry workflow, taking updates from
+days to same-day.
+
+Improved page load times and accessibility site-wide.
+2022-2023
