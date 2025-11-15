@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -25,12 +26,13 @@ function App() {
       <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <About />
-      <Experience />
+      <Experience darkMode={darkMode}/>
       <Projects />
       <Skills />
       <Education />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 }

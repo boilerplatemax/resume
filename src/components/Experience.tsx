@@ -2,14 +2,17 @@ import { FiBriefcase, FiExternalLink } from 'react-icons/fi';
 import ophea from '../assets/photos/ophea-logo.png'
 import uniontech from '../assets/photos/younified-logo.png'
 import dsf from '../assets/photos/down-syndrome-logo.png'
+import opheaWhite from '../assets/photos/ophea-logo-white.png'
+import uniontechWhite from '../assets/photos/uniontech-white-logo.png'
+import dsfWhite from '../assets/photos/dsf-square-logo-white.png'
 
-export default function Experience() {
+export default function Experience({ darkMode }: { darkMode: boolean }) {
   const experiences = [
     {
       title: 'Full Stack Developer',
       company: 'Union Technologies Inc.',
       period: 'Dec 2022 - Nov 2025',
-      logo: uniontech,
+      logo: darkMode?uniontechWhite:uniontech,
       achievements: [
         'Built a React/TypeScript CRM with lead & client management; Node backend, Tailwind UI',
         'Produced 4,000+ qualified leads by engineering a Node/TypeScript pipeline for public records',
@@ -22,7 +25,7 @@ export default function Experience() {
       title: 'Full Stack Developer',
       company: 'Down Syndrome Foundation - Help321',
       period: 'March 2023 - March 2025',
-      logo: dsf,
+      logo: darkMode?dsfWhite:dsf,
       websites: [
         { url: 'https://help321.ca', label: 'help321.ca (React + API)' },
         { url: 'https://downsyndrome.ca', label: 'downsyndrome.ca' },
@@ -40,7 +43,7 @@ export default function Experience() {
       title: 'JavaScript Developer Intern',
       company: 'OPHEA',
       period: 'Jan 2021 - Nov 2022',
-      logo: ophea,
+      logo: darkMode?opheaWhite:ophea,
       achievements: [
         'Built React/TypeScript tools and a Node.js script to automate updates for 900+ Ontario schools',
         'Automated a data-entry workflow, taking updates from days to same-day',
