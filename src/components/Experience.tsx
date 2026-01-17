@@ -1,138 +1,101 @@
-import { FiBriefcase, FiExternalLink } from 'react-icons/fi';
-import ophea from '../assets/photos/ophea-logo.png'
-import uniontech from '../assets/photos/younified-logo.png'
-import dsf from '../assets/photos/down-syndrome-logo.png'
-import opheaWhite from '../assets/photos/ophea-logo-white.png'
-import uniontechWhite from '../assets/photos/uniontech-white-logo.png'
-import dsfWhite from '../assets/photos/dsf-square-logo-white.png'
+import { FiCalendar } from 'react-icons/fi';
 
-export default function Experience({ darkMode }: { darkMode: boolean }) {
+export default function Experience() {
   const experiences = [
     {
-      title: 'Full Stack Developer',
-      company: 'Union Technologies Inc.',
-      period: 'Dec 2022 - Nov 2025',
-      logo: darkMode?uniontechWhite:uniontech,
+      title: 'Full-Stack Developer',
+      company: 'Union Technologies',
+      period: '2023 - 2026',
       achievements: [
-        'Built a React/TypeScript CRM with lead & client management; Node backend, Tailwind UI',
-        'Produced 4,000+ qualified leads by engineering a Node/TypeScript pipeline for public records',
-        'Shipped Next.js features from design to prod with TanStack Query, deployed on Vercel/Cloudflare',
-        'Built vote-tracking software for union elections with realtime tallies and admin dashboards',
-        'Managed launches for 200+ domains: DNS and SSL setup, redirects, and go-live without downtime'
-      ]
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Down Syndrome Foundation - Help321',
-      period: 'March 2023 - March 2025',
-      logo: darkMode?dsfWhite:dsf,
-      websites: [
-        { url: 'https://help321.ca', label: 'help321.ca (React + API)' },
-        { url: 'https://downsyndrome.ca', label: 'downsyndrome.ca' },
-        { url: 'https://downsyndromefoundation.ca', label: 'downsyndromefoundation.ca' }
+        'Built a React/TS CRM that improved sales execution: pipeline stages, call scheduling, reminders, scripts, meeting invites, and lead-to-client handoff.',
+        'Developed custom internal tools and automations (Node/Express) for data intake, validation, and admin workflows to reduce manual ops work.',
+        'Delivered and maintained union/client web properties across 125+ domains, including member areas, custom forms, and reliable launches.',
+        'Owned UI/UX and brand deliverables alongside development: social campaigns, print assets, event collateral, and merch-ready designs.',
       ],
-      achievements: [
-        'Partnered with a non-profit to ship a 20+ page site from UX prototype to production',
-        'Built help321.ca - a React-powered resource finder for Canada with custom filters and API integrations',
-        'Maintained and enhanced multiple WordPress sites including downsyndrome.ca and downsyndromefoundation.ca',
-        'Implemented donation flows and admin-friendly content updates with accessibility-first approach',
-        'Developed custom React components with query logic for improved user experience'
-      ]
     },
     {
-      title: 'JavaScript Developer Intern',
-      company: 'OPHEA',
-      period: 'Jan 2021 - Nov 2022',
-      logo: darkMode?opheaWhite:ophea,
+      title: 'Web Developer',
+      company: 'Down Syndrome Foundation',
+      period: '2021 - 2023',
       achievements: [
-        'Built React/TypeScript tools and a Node.js script to automate updates for 900+ Ontario schools',
-        'Automated a data-entry workflow, taking updates from days to same-day',
-        'Improved page load times and accessibility site-wide'
-      ]
-    }
+        'Shipped multi-month builds across ~12 nonprofit domains, delivering large page sets from UX prototypes to production.',
+        'Launched program sites including Summer Camp registration and a Skills Development / workplace placement portal with complex forms and automated intake workflows.',
+        'Implemented donation and intake flows plus admin-friendly content updates with accessibility-first UI.',
+      ],
+    },
+    {
+      title: 'JavaScript Developer',
+      company: 'OPHEA',
+      period: '2020 - 2021',
+      achievements: [
+        'Built React and TypeScript internal tools and Node.js scripts to automate content updates used by 900+ Ontario schools.',
+        'Helped maintain OPHEA\'s React codebase by fixing UI bugs, improving forms, and polishing admin workflows.',
+        'Collaborated with non-technical staff to turn update requests into small React features and scripts.',
+      ],
+    },
   ];
 
   return (
-    <section id="experience" className="py-20 px-6">
+    <section id="experience" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Section Icon & Title */}
-        <div className="flex flex-col items-center mb-16">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 flex items-center justify-center mb-4 shadow-lg">
-            <FiBriefcase size={28} className="text-white" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-            Work Experience
+        {/* Section Title */}
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+            Experience
           </h2>
+          <div className="w-12 h-1 bg-teal-600 dark:bg-teal-400 rounded-full"></div>
         </div>
 
-        {/* Single Column Layout */}
-        <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="group p-6 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-400 bg-white dark:bg-gray-800/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-            >
-              {/* Company Logo */}
-              {exp.logo && (
-                <div className="mb-4 p-4 rounded-lg inline-block">
-                  <img
-                    src={exp.logo}
-                    alt={`${exp.company} logo`}
-                    className="h-12 object-contain"
-                  />
-                </div>
-              )}
+        {/* Timeline */}
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-700"></div>
 
-              {/* Header */}
-              <div className="mb-4">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
-                  {exp.title}
-                </h3>
-                <p className="text-lg font-semibold text-purple-600 dark:text-purple-400">
-                  {exp.company}
-                </p>
-                <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                  {exp.period}
-                </span>
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="relative md:pl-12"
+              >
+                {/* Timeline dot */}
+                <div className="hidden md:block absolute left-0 top-2 w-2 h-2 -ml-1 rounded-full bg-teal-600 dark:bg-teal-400"></div>
+
+                {/* Content */}
+                <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                      {exp.title}
+                    </h3>
+                    <p className="text-teal-600 dark:text-teal-400 font-medium">
+                      {exp.company}
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mt-1">
+                      <FiCalendar size={14} />
+                      <span>{exp.period}</span>
+                    </div>
+                  </div>
+
+                  {/* Achievements */}
+                  <ul className="space-y-3">
+                    {exp.achievements.map((achievement, i) => (
+                      <li
+                        key={i}
+                        className="text-slate-600 dark:text-slate-300 flex items-start gap-3 text-sm leading-relaxed"
+                      >
+                        <span className="text-teal-600 dark:text-teal-400 mt-1.5 flex-shrink-0">
+                          <svg className="w-1.5 h-1.5 fill-current" viewBox="0 0 6 6">
+                            <circle cx="3" cy="3" r="3" />
+                          </svg>
+                        </span>
+                        <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-
-              {/* Website Links */}
-              {exp.websites && (
-                <div className="mb-4 space-y-2">
-                  <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">
-                    Projects:
-                  </p>
-                  {exp.websites.map((site, i) => (
-                    <a
-                      key={i}
-                      href={site.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 hover:underline group/link"
-                    >
-                      <FiExternalLink size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                      {site.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-
-              {/* Achievements */}
-              <ul className="space-y-2">
-                {exp.achievements.map((achievement, i) => (
-                  <li
-                    key={i}
-                    className="text-gray-700 dark:text-gray-300 flex items-start gap-2"
-                  >
-                    <span className="text-purple-600 dark:text-purple-400 mt-1.5 flex-shrink-0">
-                      •
-                    </span>
-                    <span>{achievement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -9,13 +9,16 @@ export default {
     extend: {
       colors: {
         primary: {
-          light: '#3b82f6',
-          dark: '#60a5fa',
+          light: '#0f766e', // teal-700
+          dark: '#14b8a6',  // teal-500
         },
         accent: {
-          light: '#8b5cf6',
-          dark: '#a78bfa',
+          light: '#334155', // slate-700
+          dark: '#94a3b8',  // slate-400
         }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
