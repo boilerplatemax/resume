@@ -26,7 +26,7 @@ function App() {
       <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <About />
-      <Experience darkMode={darkMode}/>
+      <Experience />
       <Projects />
       <Skills />
       <Education />

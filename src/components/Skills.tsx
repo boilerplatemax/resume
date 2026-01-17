@@ -1,21 +1,16 @@
 import {
   SiReact,
-  SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
   SiNodedotjs,
-  SiExpress,
   SiPostgresql,
   SiMongodb,
   SiGraphql,
   SiStripe,
   SiVercel,
-  SiGithubactions,
   SiWordpress,
   SiJest,
   SiJavascript,
-  SiHtml5,
-  SiCss3,
 } from 'react-icons/si';
 import { FiShield } from 'react-icons/fi';
 
