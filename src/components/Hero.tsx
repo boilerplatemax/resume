@@ -1,41 +1,49 @@
-import { FiDownload, FiMail } from 'react-icons/fi';
+import { FiDownload, FiMail, FiArrowRight } from 'react-icons/fi';
 import resume from '../assets/MaxShapovalov_Resume_2025.pdf';
 
 export default function Hero() {
   return (
     <section className="pt-32 pb-20 px-6 min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto w-full">
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <p className="text-lg text-purple-600 dark:text-purple-400 font-medium">
-              Hi, my name is
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <p className="text-base text-teal-600 dark:text-teal-400 font-medium tracking-wide uppercase">
+              Full-Stack Developer
             </p>
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 bg-clip-text text-transparent animate-gradient">
+            <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight">
               Max Shapovalov
             </h1>
-            <p className="text-3xl md:text-4xl font-bold text-gray-700 dark:text-gray-300">
-              React Developer
-            </p>
+            <div className="w-24 h-1 bg-teal-600 dark:bg-teal-400 rounded-full"></div>
           </div>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
-            React/Next.js specialist converting prototypes into scalable, production UI with speed and care.
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+            Full-Stack developer specializing in React/Next.js. Delivered 125+ domains,
+            built a sales CRM, and shipped a monetized SaaS to 2,000+ active users.
           </p>
-          <div className="flex flex-wrap gap-4 pt-6">
+          <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+              Victoria, BC
+            </span>
+            <span className="text-slate-300 dark:text-slate-600">|</span>
+            <span>Available for opportunities</span>
+          </div>
+          <div className="flex flex-wrap gap-4 pt-4">
             <a
               href="#contact"
-              className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/50 font-medium flex items-center gap-2"
+              className="group px-6 py-3 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg font-medium flex items-center gap-2"
             >
-              <FiMail className="group-hover:rotate-12 transition-transform" />
+              <FiMail className="group-hover:rotate-6 transition-transform" size={18} />
               Get in touch
+              <FiArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
             </a>
             <a
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="group px-8 py-4 border-2 border-purple-600 dark:border-purple-400 hover:bg-purple-600 hover:text-white dark:hover:bg-purple-400 dark:hover:text-gray-900 rounded-lg transition-all hover:-translate-y-1 hover:shadow-xl font-medium flex items-center gap-2"
+              className="group px-6 py-3 border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all hover:-translate-y-0.5 font-medium flex items-center gap-2 text-slate-700 dark:text-slate-300"
             >
-              <FiDownload className="group-hover:animate-bounce" />
-              Resume
+              <FiDownload className="group-hover:translate-y-0.5 transition-transform" size={18} />
+              Download Resume
             </a>
           </div>
         </div>

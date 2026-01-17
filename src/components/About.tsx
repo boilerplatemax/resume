@@ -1,55 +1,65 @@
-import { FiUser } from 'react-icons/fi';
-import profilePhoto from '../assets/photos/about-portrait.png'
+import profilePhoto from '../assets/photos/about-portrait.png';
+
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800/50 dark:to-purple-900/20">
+    <section id="about" className="py-24 px-6 bg-slate-50 dark:bg-slate-800/30">
       <div className="max-w-6xl mx-auto">
-        {/* Section Icon & Title */}
-        <div className="flex flex-col items-center mb-12">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 flex items-center justify-center mb-4 shadow-lg">
-            <FiUser size={28} className="text-white" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-            About Me
+        {/* Section Title */}
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+            About
           </h2>
+          <div className="w-12 h-1 bg-teal-600 dark:bg-teal-400 rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-5 gap-12 items-center">
           {/* Profile Image */}
-          <div className="flex justify-center">
+          <div className="md:col-span-2 flex justify-center md:justify-start">
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-400 p-1 shadow-2xl hover:scale-105 transition-transform duration-300 transform-gpu">
-  <div className="w-full h-full rounded-2xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden transform-gpu">
-    <img
-      src={profilePhoto}
-      alt="Max Shapovalov"
-      className="w-full h-full object-cover transform-gpu"
-    />
-  </div>
-</div>
-              {/* Decorative elements */}
-              <div className="absolute -z-10 -top-4 -right-4 w-24 h-24 bg-purple-300 dark:bg-purple-600 rounded-full opacity-50 blur-xl"></div>
-              <div className="absolute -z-10 -bottom-4 -left-4 w-32 h-32 bg-pink-300 dark:bg-pink-600 rounded-full opacity-50 blur-xl"></div>
+              <div className="w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-700 shadow-lg">
+                <img
+                  src={profilePhoto}
+                  alt="Max Shapovalov"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative corner */}
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 border-2 border-teal-600 dark:border-teal-400 rounded-2xl -z-10"></div>
             </div>
           </div>
 
           {/* Description */}
-          <div className="space-y-6">
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm a <span className="font-semibold text-purple-600 dark:text-purple-400">React Developer</span> based in Victoria, BC,
-              with a passion for building accessible, performant web applications that make a difference.
+          <div className="md:col-span-3 space-y-6">
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              I'm a <span className="font-semibold text-slate-900 dark:text-white">Full-Stack Developer</span> and founder based in Victoria, BC.
+              I specialize in building production-ready applications with React and Next.js.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              With experience shipping production features at scale, I specialize in{' '}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">React</span>,{' '}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">Next.js</span>, and{' '}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">TypeScript</span>.
-              I've contributed to projects ranging from CRM systems to non-profit websites, always with a focus on clean code and exceptional user experience.
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              As the founder of <span className="font-semibold text-slate-900 dark:text-white">UnionTab</span>, I built and monetized a multi-tenant SaaS
+              platform to over 2,000 active users, implementing Stripe subscriptions, tenant-aware roles, and
+              collaboration features.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              When I'm not coding, you can find me exploring new web technologies, contributing to open source,
-              or working on side projects that solve real-world problems.
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              At Union Technologies, I built a React/TypeScript CRM that improved sales execution
+              and delivered web properties across 125+ domains. I enjoy turning complex requirements into
+              clean, scalable solutions.
             </p>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+              <div>
+                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">125+</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Domains Delivered</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">2,000+</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">SaaS Users</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">5+</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Years Experience</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
