@@ -11,6 +11,7 @@ import {
 } from 'react-icons/si';
 
 import help321 from '../assets/photos/downsyndrome-canada-screenshot.png';
+import uniontab from '../assets/photos/uniontab-screenshot.png';
 
 export default function Projects() {
   const projects = [
@@ -19,7 +20,7 @@ export default function Projects() {
       role: 'Founder / Full-Stack Developer',
       description:
         'Built and monetized a multi-tenant SaaS to 2,000+ active users. Implemented Stripe subscriptions, tenant-aware roles (admin/user), and core collaboration features including posts, files, meetings, and public/private pages. Added account security controls and tiered access (free vs premium).',
-      image: null,
+      image: uniontab,
       technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Postgres', 'Tailwind', 'Stripe', 'Vercel'],
       github: null,
       demo: null,

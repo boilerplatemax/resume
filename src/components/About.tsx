@@ -16,11 +16,11 @@ export default function About() {
           {/* Profile Image */}
           <div className="md:col-span-2 flex justify-center md:justify-start">
             <div className="relative">
-              <div className="w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-700 shadow-lg">
+              <div className="w-64 md:w-72 rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-700 shadow-lg bg-slate-100 dark:bg-slate-800">
                 <img
                   src={profilePhoto}
                   alt="Max Shapovalov"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
               </div>
               {/* Decorative corner */}
