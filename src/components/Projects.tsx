@@ -22,7 +22,7 @@ export default function Projects() {
       image: null,
       technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Postgres', 'Tailwind', 'Stripe', 'Vercel'],
       github: null,
-      demo: null,
+      demo: 'https://www.uniontab.com/',
       featured: true,
     },
     {
