@@ -1,92 +1,67 @@
-MAX SHAPOVALOV
-React Developer
-WORK EXPERIENCE
-Down Syndrome Foundation Help321
-BDes
-
-Digital Futures
-Certificate
-React
-
-Next.js App Router
-
-TypeScript
-
-JavaScript ESNext
-
-TanStack Query
-
-Redux Toolkit
-
-React Hook Form + Zod
-
-Tailwind CSS
-
-Jest
-
-React Testing Library
-
-REST APIs
-
-GraphQL
-
-Node.js & Express
-
-Vercel
-
-Git & GitHub Actions
-
-Accessibility WCAG 2.2
-Partnered with a non-profit to ship a 20+ page site from UX
-prototype to production.
-
-Built a resource finder for Canada with custom filters, API
-integrations, and query logic.
-
-Implemented donation flows and admin-friendly content
-updates; accessibility-first.
-OCAD University
-University of Helsinki
-Web Developer React & WordPress
-PROJECTS
-SKILLS
-EDUCATION
+Max Shapovalov
+Full-Stack Developer
+Victoria, BC (416) 579-3253 maximsdev@gmail.com maxresume.vercel.app
 SUMMARY
-Toronto, ON
-Helsinki, Finland
-maximsdev@gmail.com (416) 579-3253 sitecraftersdev.com
-LinkedIn GitHub Victoria, BC
-React/Next.js specialist.
-Converts prototypes into
-scalable, production UI with
-speed and care.
-2018-2022
-Full Stack Developer
-Union Technologies Inc.
-December 2022 November 2025 Toronto, ON
-Built a React /TypeScript CRM with lead & client
-management; Node backend, Tailwind UI.
-
-Produced 4,000+ qualified leads by engineering a Node/
-TypeScript pipeline for public records and integrating it with
-the React CRM.
-
-Shipped Next.js features from design to prod with React/
-TypeScript, TanStack Query, Tailwind; deployed on Vercel/
-Cloudflare via GitHub Actions.
-
-Built vote-tracking software for union elections with realtime tallies and admin dashboards (React & Node).
-
-Managed launches for 200+ domains: DNS and SSL setup,
-redirects, and go-live without downtime.
-JavaScript Developer Intern
-OPHEA
-January 2021 November 2022 Toronto, ON
-Built React /TypeScript tools and a Node.js script to
-automate updates for 900+ Ontario schools.
-
-Automated a data-entry workflow, taking updates from
-days to same-day.
-
-Improved page load times and accessibility site-wide.
-2022-2023
+Full-Stack developer and founder specializing in React/Next.js. Delivered 125+
+domains, built a sales CRM, and shipped a monetized SaaS to 2,000+ active users.
+EXPERIENCE
+Union Technologies — Full-Stack Developer | 2023–2026
+• Built a React/TS CRM that improved sales execution: pipeline stages, call
+scheduling, reminders, scripts, meeting invites, and lead-to-client handoff.
+• Developed custom internal tools and automations (Node/Express) for data
+intake, validation, and admin workflows to reduce manual ops work.
+• Delivered and maintained union/client web properties across 125+ domains,
+including member areas, custom forms, and reliable launches.
+• Owned UI/UX and brand deliverables alongside development: social campaigns,
+print assets, event collateral, and merch-ready designs.
+Down Syndrome Foundation — Web Developer | 2021–2023
+• Shipped multi-month builds across ~12 nonprofit domains, delivering large page
+sets from UX prototypes to production.
+• Launched program sites including Summer Camp registration and a Skills
+Development / workplace placement portal with complex forms and automated
+intake workflows.
+• Implemented donation and intake flows plus admin-friendly content updates
+with accessibility-first UI.
+OPHEA — JavaScript Developer | 2020–2021
+• Built React and TypeScript internal tools and Node.js scripts to automate content
+updates used by 900+ Ontario schools.
+• Helped maintain OPHEA’s React codebase by fixing UI bugs, improving forms, and
+polishing admin workflows.
+• Collaborated with non-technical staff to turn update requests into small React
+features and scripts.
+PROJECTS
+UnionTab — Founder / Full-Stack Developer
+• Built and monetized a multi-tenant SaaS to 2,000+ active users (Next.js/React,
+TypeScript, Supabase/Postgres, Tailwind, Vercel).
+• Implemented Stripe subscriptions, tenant-aware roles (admin/user), and core
+collaboration features (posts, files, meetings, public/private pages).
+• Added account security controls and tiered access (free vs premium).
+Help321 — Resource Finder (React)
+• Built a React web app backed by a custom API to surface Down
+syndrome–related resources across Canada.
+• Implemented fast filtering and query logic designed for easy navigation.
+EDUCATION
+OCAD University
+(Toronto, ON) — Bachelor of Design
+(BDes), Digital Futures
+(Sep 2018 – Apr 2022)
+University of Helsinki
+(Helsinki, Finland) — Full-Stack Open
+(2023-2024)
+CERTIFICATES
+Google Project Management
+Certificate (2025)
+SKILLS
+React & TypeScript
+Next.js (App Router)
+JavaScript & HTML/CSS
+Tailwind CSS
+Node.js & Express
+REST APIs & GraphQL
+Postgres/Supabase & MongoDB
+Auth & RBAC (multi-tenant)
+Stripe & SendGrid
+Vercel & GitHub Actions
+WordPress
+(Elementor/WooCommerce)
+Testing (Jest, React Testing Library)
