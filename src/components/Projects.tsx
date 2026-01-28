@@ -1,4 +1,4 @@
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { FiGithub, FiExternalLink } from "react-icons/fi"
 import {
   SiReact,
   SiTypescript,
@@ -8,52 +8,65 @@ import {
   SiSupabase,
   SiStripe,
   SiVercel,
-} from 'react-icons/si';
+} from "react-icons/si"
 
-import help321 from '../assets/photos/downsyndrome-canada-screenshot.png';
+import help321 from "../assets/photos/downsyndrome-canada-screenshot.png"
+import unionTab from "../assets/photos/uniontab-screenshot.png"
 
 export default function Projects() {
   const projects = [
     {
-      title: 'UnionTab',
-      role: 'Founder / Full-Stack Developer',
+      title: "UnionTab",
+      role: "Founder / Full-Stack Developer",
       description:
-        'Built and monetized a multi-tenant SaaS to 2,000+ active users. Implemented Stripe subscriptions, tenant-aware roles (admin/user), and core collaboration features including posts, files, meetings, and public/private pages. Added account security controls and tiered access (free vs premium).',
-      image: null,
-      technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Postgres', 'Tailwind', 'Stripe', 'Vercel'],
+        "Built and monetized a multi-tenant SaaS to 2,000+ active users. Implemented Stripe subscriptions, tenant-aware roles (admin/user), and core collaboration features including posts, files, meetings, and public/private pages. Added account security controls and tiered access (free vs premium).",
+      image: unionTab,
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Supabase",
+        "Postgres",
+        "Tailwind",
+        "Stripe",
+        "Vercel",
+      ],
       github: null,
-      demo: 'https://www.uniontab.com/',
+      demo: "https://www.uniontab.com/",
       featured: true,
     },
     {
-      title: 'Help321',
-      role: 'Resource Finder for Down Syndrome Foundation',
+      title: "Help321",
+      role: "Resource Finder for Down Syndrome Foundation",
       description:
-        'Built a React web app backed by a custom API to surface Down syndrome-related resources across Canada. Implemented fast filtering and query logic designed for easy navigation by users and caregivers.',
+        "Built a React web app backed by a custom API to surface Down syndrome-related resources across Canada. Implemented fast filtering and query logic designed for easy navigation by users and caregivers.",
       image: help321,
-      technologies: ['React', 'TypeScript', 'API Integration'],
+      technologies: ["React", "TypeScript", "API Integration"],
       github: null,
-      demo: 'https://help321.ca',
+      demo: "https://help321.ca",
       featured: true,
     },
-  ];
+  ]
 
   const getTechIcon = (tech: string) => {
     const icons: Record<string, React.ReactElement> = {
       React: <SiReact className="text-cyan-500" />,
       TypeScript: <SiTypescript className="text-blue-500" />,
-      'Next.js': <SiNextdotjs className="text-slate-900 dark:text-white" />,
+      "Next.js": <SiNextdotjs className="text-slate-900 dark:text-white" />,
       Tailwind: <SiTailwindcss className="text-cyan-400" />,
       Postgres: <SiPostgresql className="text-blue-600" />,
       Supabase: <SiSupabase className="text-emerald-500" />,
       Stripe: <SiStripe className="text-violet-500" />,
       Vercel: <SiVercel className="text-slate-900 dark:text-white" />,
-    };
-    return icons[tech] || null;
-  };
+    }
+    return icons[tech] || null
+  }
 
   return (
-    <section id="projects" className="py-24 px-6 bg-slate-50 dark:bg-slate-800/30">
+    <section
+      id="projects"
+      className="py-24 px-6 bg-slate-50 dark:bg-slate-800/30"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <div className="mb-16">
@@ -117,7 +130,9 @@ export default function Projects() {
                       {getTechIcon(tech) && (
                         <span className="text-sm">{getTechIcon(tech)}</span>
                       )}
-                      <span className="text-slate-600 dark:text-slate-300">{tech}</span>
+                      <span className="text-slate-600 dark:text-slate-300">
+                        {tech}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -153,5 +168,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  );
+  )
 }
