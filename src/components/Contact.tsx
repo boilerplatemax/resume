@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { FiMail, FiSend, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiSend, FiPhone, FiMapPin, FiLinkedin } from 'react-icons/fi';
+import { contact } from '../data';
+import Reveal from './Reveal';
+
+const inputClass =
+  'w-full rounded-2xl border border-line bg-cream px-4 py-3 text-ink placeholder:text-ink-muted focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/30 transition-colors';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -52,177 +57,127 @@ export default function Contact() {
     }
   };
 
+  const links = [
+    { icon: FiMail, label: 'Email', value: contact.email, href: `mailto:${contact.email}` },
+    { icon: FiPhone, label: 'Phone', value: contact.phone, href: contact.phoneHref },
+    { icon: FiLinkedin, label: 'LinkedIn', value: 'in/maxshapovalov', href: contact.linkedin },
+    { icon: FiMapPin, label: 'Based in', value: 'Victoria, BC, Canada' },
+  ];
+
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
-            Get in Touch
-          </h2>
-          <div className="w-12 h-1 bg-teal-600 dark:bg-teal-400 rounded-full mb-4"></div>
-          <p className="text-slate-600 dark:text-slate-400 max-w-xl">
-            Available for new opportunities. Let's connect and build something great together.
-          </p>
-        </div>
+    <section id="contact" className="px-4 sm:px-6 pb-20 md:pb-28">
+      <Reveal>
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-coral px-6 py-14 md:px-14 md:py-20 text-white">
+          <div aria-hidden className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-butter/40 blur-3xl" />
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <a
-                href="mailto:maximsdev@gmail.com"
-                className="flex items-center gap-4 p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-teal-500 dark:hover:border-teal-400 transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center flex-shrink-0">
-                  <FiMail className="text-teal-600 dark:text-teal-400" size={18} />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email</p>
-                  <p className="text-slate-900 dark:text-white font-medium group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
-                    maximsdev@gmail.com
-                  </p>
-                </div>
-              </a>
-
-              <a
-                href="tel:+14165793253"
-                className="flex items-center gap-4 p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-teal-500 dark:hover:border-teal-400 transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center flex-shrink-0">
-                  <FiPhone className="text-teal-600 dark:text-teal-400" size={18} />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Phone</p>
-                  <p className="text-slate-900 dark:text-white font-medium group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
-                    (416) 579-3253
-                  </p>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-4 p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50">
-                <div className="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center flex-shrink-0">
-                  <FiMapPin className="text-teal-600 dark:text-teal-400" size={18} />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Location</p>
-                  <p className="text-slate-900 dark:text-white font-medium">
-                    Victoria, BC, Canada
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-teal-400 transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-teal-400 transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-
+          <div className="relative grid gap-12 lg:grid-cols-2">
             <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-teal-400 transition-colors"
-                placeholder="What's this about?"
-              />
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80">06 &middot; Contact</p>
+              <h2 className="mt-4 font-display text-5xl md:text-6xl font-extrabold leading-[0.95] tracking-tight">
+                Let&rsquo;s build something good.
+              </h2>
+              <p className="mt-5 max-w-md text-lg text-white/90">
+                Hiring for a full-stack, frontend, or product role? Or need a site or app built right?
+                I usually reply within a day.
+              </p>
+
+              <ul className="mt-10 space-y-3">
+                {links.map((item) => {
+                  const inner = (
+                    <>
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/15">
+                        <item.icon size={18} />
+                      </span>
+                      <span>
+                        <span className="block text-xs uppercase tracking-[0.14em] text-white/70">{item.label}</span>
+                        <span className="font-medium">{item.value}</span>
+                      </span>
+                    </>
+                  );
+                  return (
+                    <li key={item.label}>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target={item.href.startsWith('http') ? '_blank' : undefined}
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-4 rounded-2xl p-1 transition-transform hover:translate-x-1"
+                        >
+                          {inner}
+                        </a>
+                      ) : (
+                        <div className="flex items-center gap-4 p-1">{inner}</div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
 
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-teal-400 transition-colors resize-none"
-                placeholder="Your message..."
-              />
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full px-6 py-3 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 rounded-lg font-medium transition-all hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 rounded-3xl border-2 border-ink bg-white p-6 md:p-8 text-ink shadow-pop"
             >
-              {isSubmitting ? (
-                'Sending...'
-              ) : (
-                <>
-                  <FiSend size={18} />
-                  Send Message
-                </>
-              )}
-            </button>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink-soft">
+                    Name
+                  </label>
+                  <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className={inputClass} placeholder="Your name" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink-soft">
+                    Email
+                  </label>
+                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className={inputClass} placeholder="you@company.com" />
+                </div>
+              </div>
 
-            {/* Status Messages */}
-            {submitStatus === 'success' && (
-              <div className="p-4 rounded-lg bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 text-sm text-center">
-                Message sent successfully! I'll get back to you soon.
+              <div>
+                <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-ink-soft">
+                  Subject
+                </label>
+                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required className={inputClass} placeholder="A role, a project, a hello" />
               </div>
-            )}
-            {submitStatus === 'error' && (
-              <div className="p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 text-sm text-center">
-                Something went wrong. Please try again or email me directly.
+
+              <div>
+                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink-soft">
+                  Message
+                </label>
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className={`${inputClass} resize-none`} placeholder="Tell me a bit about it..." />
               </div>
-            )}
-          </form>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 font-medium text-cream transition-all hover:-translate-y-0.5 hover:bg-coral-dark disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0"
+              >
+                {isSubmitting ? (
+                  'Sending...'
+                ) : (
+                  <>
+                    <FiSend size={18} />
+                    Send message
+                  </>
+                )}
+              </button>
+
+              <div aria-live="polite">
+                {submitStatus === 'success' && (
+                  <p className="rounded-2xl bg-emerald-50 p-4 text-center text-sm text-emerald-800">
+                    Message sent! I&rsquo;ll get back to you soon.
+                  </p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="rounded-2xl bg-red-50 p-4 text-center text-sm text-red-700">
+                    Something went wrong. Please try again or email me directly.
+                  </p>
+                )}
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
