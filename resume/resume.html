@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Max Shapovalov Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  @page { size: Letter; margin: 0.42in 0.5in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Geist, Arial, sans-serif; font-size: 9.2pt; line-height: 1.33; color: #1D1B18; }
+  a { color: inherit; text-decoration: none; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 9pt; border-bottom: 2pt solid #1D1B18; }
+  h1 { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 26pt; font-weight: 800; letter-spacing: -0.5pt; line-height: 1; }
+  h1 span { color: #E4572E; }
+  .headline { font-weight: 600; font-size: 11pt; margin-top: 4pt; }
+  .contact { text-align: right; font-size: 8.8pt; line-height: 1.5; color: #4A4640; }
+  h2 { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 10.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2pt; color: #C2411C; margin: 9pt 0 4pt; }
+  .summary { margin-top: 9pt; color: #2d2a26; }
+  .job { margin-bottom: 5pt; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-weight: 600; font-size: 10.2pt; }
+  .job-title em { font-style: normal; font-weight: 400; color: #4A4640; }
+  .dates { font-size: 8.8pt; color: #4A4640; white-space: nowrap; }
+  ul { margin: 2.5pt 0 0 12pt; }
+  li { margin-bottom: 1.6pt; padding-left: 2pt; }
+  li::marker { color: #E4572E; }
+  .projects li b, .skills b { font-weight: 600; }
+  .skills p { margin-bottom: 2.5pt; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+  .edu p { margin-bottom: 2pt; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Max Shapovalov<span>.</span></h1>
+    <p class="headline">Full-Stack Developer &amp; Founder &middot; React / Next.js / TypeScript</p>
+  </div>
+  <div class="contact">
+    Victoria (Langford), BC &middot; 416-579-3253<br />
+    <a href="mailto:maximsdev@gmail.com">maximsdev@gmail.com</a> &middot; <a href="https://maxresume.vercel.app">maxresume.vercel.app</a><br />
+    <a href="https://www.linkedin.com/in/maxshapovalov/">linkedin.com/in/maxshapovalov</a> &middot; <a href="https://github.com/boilerplatemax">github.com/boilerplatemax</a>
+  </div>
+</header>
+
+<p class="summary">
+  Full-stack developer and founder with 7 years of experience and a BDes in Digital Futures. Built and monetized a
+  multi-tenant SaaS to 2,000+ active users, shipped a sales CRM and internal tooling, and launched 150 websites across
+  200+ managed domains. Comfortable owning a feature from database to UI, and the brand around it.
+</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">UnionTab <em>| Founder &amp; Full-Stack Developer, Remote</em></p><p class="dates">2025 to Present</p></div>
+  <ul>
+    <li>Designed, built, and monetized a multi-tenant SaaS for union executives to 2,000+ active users (Next.js, TypeScript, Supabase/Postgres, Tailwind, Vercel).</li>
+    <li>Implemented Stripe subscriptions, tenant-aware roles (admin/user), and tiered free vs. premium access.</li>
+    <li>Shipped secure online voting, mass email and SMS, member portals, document storage, and event RSVPs.</li>
+    <li>Designed a self-serve onboarding (no demo, no credit card on the free tier) to lower the barrier to sign-up; own brand, email funnel, infrastructure, and support.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Union Technologies (YOUnified platform) <em>| Full-Stack Developer, Toronto (Remote)</em></p><p class="dates">2022 to 2026</p></div>
+  <ul>
+    <li>Built a custom React/TypeScript sales CRM: pipeline stages, automated follow-up scheduling, reminders, call scripts, and lead-to-client handoff.</li>
+    <li>Automated the full lead lifecycle: rep assignment, auto-recontact of cold leads, and recurring client follow-ups.</li>
+    <li>Built and maintained YOUnified, a multi-tenant membership app used by several thousand members.</li>
+    <li>Launched 150 WordPress sites from brief to go-live; managed DNS, SSL, redirects, and launches across 200+ domains.</li>
+    <li>Developed Node/Express internal tools for data intake, validation, and admin workflows, cutting manual ops work.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Canadian Network for Respiratory Care <em>| Freelance Designer &amp; Web Developer, Remote</em></p><p class="dates">2024 to Present</p></div>
+  <ul>
+    <li>Built a WordPress site and delivered a full redesign; provide ongoing web support, graphics, and short-form video.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Down Syndrome Foundation <em>| Web Developer, Toronto</em></p><p class="dates">2021 to 2022</p></div>
+  <ul>
+    <li>Shipped ~12 nonprofit web properties from UX prototype to production, including camp registration and a workplace-placement portal.</li>
+    <li>Built automated application and reply pipelines that sent applicants next steps on submission, cutting manual response work.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Ophea <em>| JavaScript Developer, Toronto</em></p><p class="dates">2019 to 2021</p></div>
+  <ul>
+    <li>Built React/TypeScript internal tools and Node.js scripts that automated content updates for a platform used by 1,000 Ontario schools, roughly halving routine update time.</li>
+  </ul>
+</div>
+
+<h2>Selected Projects</h2>
+<ul class="projects">
+  <li><b>UnionTab</b> (uniontab.com): Multi-tenant SaaS with voting, messaging, and member portals; 2,000+ users, Stripe, RBAC.</li>
+  <li><b>ATU 1573</b> (atu1573.ca): Union site for 1,000+ members with 2FA login, member approval, and real-time notifications.</li>
+  <li><b>Stingray Cleaning</b> (stingraycleaning.com): Next.js site with an instant-quote calculator that prices a job in under 60 seconds and captures the lead.</li>
+</ul>
+
+<div class="two">
+  <div class="skills">
+    <h2>Skills</h2>
+    <p><b>Frontend:</b> React, Next.js (App Router), TypeScript, JavaScript, Tailwind CSS, accessibility, performance</p>
+    <p><b>Backend/Data:</b> Node.js, Express, REST, GraphQL, Postgres/Supabase, MongoDB, Auth &amp; RBAC, Stripe, SendGrid</p>
+    <p><b>Tooling:</b> Git, GitHub Actions (CI/CD), Vercel, Jest, React Testing Library, WordPress, DNS/SSL</p>
+    <p><b>Design:</b> Figma, UX prototyping, brand systems, Photoshop, Illustrator</p>
+  </div>
+  <div class="edu">
+    <h2>Education</h2>
+    <p><b>Bachelor of Design (BDes), Digital Futures</b><br />OCAD University, Toronto, 2018 to 2022</p>
+    <p><b>Full Stack Open</b><br />University of Helsinki (online), 2023 to 2024</p>
+    <p><b>Google Project Management Certificate</b>, 2025</p>
+    <p>Bilingual: English &amp; French</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,148 +1,135 @@
-import { useState } from 'react';
-import { FiGithub, FiLinkedin, FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
+import { FiGithub, FiLinkedin, FiMenu, FiX, FiDownload } from 'react-icons/fi';
+import resume from '../assets/MaxShapovalov_Resume.pdf';
+import { contact } from '../data';
 
-interface NavigationProps {
-  darkMode: boolean;
-  setDarkMode: (value: boolean) => void;
-}
+const navLinks = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Work' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#contact', label: 'Contact' },
+];
 
-export default function Navigation({ darkMode, setDarkMode }: NavigationProps) {
+export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-  const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#education', label: 'Education' },
-    { href: '#contact', label: 'Contact' },
-  ];
-
-  const handleNavClick = () => {
-    setMobileMenuOpen(false);
-  };
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+  }, [mobileMenuOpen]);
 
   return (
     <>
-      <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <button
-              onClick={scrollToTop}
-              className="text-xl font-bold text-slate-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer"
-            >
-              MS<span className="text-teal-600 dark:text-teal-400">.</span>
-            </button>
+      <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+        <nav
+          className={`mx-auto flex max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300 ${
+            scrolled
+              ? 'border-line bg-white/85 shadow-card backdrop-blur-md'
+              : 'border-transparent bg-transparent'
+          }`}
+        >
+          <a
+            href="#top"
+            className="flex items-center gap-2 font-display text-lg font-bold text-ink"
+            aria-label="Back to top"
+          >
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-sm text-cream">
+              M
+            </span>
+            <span className="hidden sm:inline">Max Shapovalov</span>
+          </a>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors text-sm font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
-
-              {/* Social Icons */}
-              <div className="flex items-center gap-3 ml-4 border-l border-slate-200 dark:border-slate-700 pl-4">
-                <a
-                  href="https://github.com/boilerplatemax"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                  aria-label="GitHub"
-                >
-                  <FiGithub size={18} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/maxshapovalov/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <FiLinkedin size={18} />
-                </a>
-              </div>
-
-              {/* Theme Toggle */}
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-                aria-label="Toggle theme"
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-full px-3.5 py-1.5 text-sm font-medium text-ink-soft transition-colors hover:bg-cream-dark hover:text-ink"
               >
-                {darkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </button>
+                {link.label}
+              </a>
+            ))}
           </div>
-        </div>
-      </nav>
 
-      {/* Mobile Full-Screen Menu */}
+          <div className="hidden md:flex items-center gap-2">
+            <a
+              href={contact.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full p-2 text-ink-soft transition-colors hover:bg-cream-dark hover:text-ink"
+              aria-label="GitHub"
+            >
+              <FiGithub size={18} />
+            </a>
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full p-2 text-ink-soft transition-colors hover:bg-cream-dark hover:text-ink"
+              aria-label="LinkedIn"
+            >
+              <FiLinkedin size={18} />
+            </a>
+            <a
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-medium text-cream transition-colors hover:bg-coral"
+            >
+              <FiDownload size={14} />
+              Resume
+            </a>
+          </div>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden rounded-full p-2 text-ink"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+        </nav>
+      </header>
+
       <div
-        className={`fixed inset-0 bg-white dark:bg-slate-900 z-40 md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-40 bg-cream md:hidden transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        aria-hidden={!mobileMenuOpen}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex h-full flex-col justify-center gap-2 px-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              onClick={handleNavClick}
-              className="text-2xl font-medium text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+              tabIndex={mobileMenuOpen ? 0 : -1}
+              className="font-display text-5xl font-bold text-ink transition-colors hover:text-coral"
             >
               {link.label}
             </a>
           ))}
-
-          {/* Social Icons in Mobile Menu */}
-          <div className="flex gap-6 mt-8">
-            <a
-              href="https://github.com/boilerplatemax"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              aria-label="GitHub"
-            >
-              <FiGithub size={28} />
+          <div className="mt-10 flex items-center gap-3">
+            <a href={resume} target="_blank" rel="noopener noreferrer" className="btn-primary" tabIndex={mobileMenuOpen ? 0 : -1}>
+              <FiDownload size={16} />
+              Resume
             </a>
-            <a
-              href="https://www.linkedin.com/in/maxshapovalov/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <FiLinkedin size={28} />
+            <a href={contact.github} target="_blank" rel="noopener noreferrer" className="rounded-full border-2 border-ink p-3" aria-label="GitHub" tabIndex={mobileMenuOpen ? 0 : -1}>
+              <FiGithub size={18} />
+            </a>
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full border-2 border-ink p-3" aria-label="LinkedIn" tabIndex={mobileMenuOpen ? 0 : -1}>
+              <FiLinkedin size={18} />
             </a>
           </div>
-
-          {/* Theme Toggle in Mobile Menu */}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="mt-8 p-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-            aria-label="Toggle theme"
-          >
-            {darkMode ? <FiSun size={24} /> : <FiMoon size={24} />}
-          </button>
         </div>
       </div>
     </>
