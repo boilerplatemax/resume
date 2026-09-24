@@ -1,102 +1,84 @@
-import { FiCalendar } from 'react-icons/fi';
+import { experience } from '../data';
+import younifiedLogo from '../assets/photos/younified-square-logo.png';
+import dsfLogo from '../assets/photos/dsf-square-logo.png';
+import opheaLogo from '../assets/photos/ophea-square-logo.jpg';
+import SectionHeader from './SectionHeader';
+import Reveal from './Reveal';
+
+const logos: Record<string, string> = {
+  'Union Technologies (YOUnified)': younifiedLogo,
+  'Down Syndrome Foundation': dsfLogo,
+  Ophea: opheaLogo,
+};
+
+function Logo({ company }: { company: string }) {
+  const src = logos[company];
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt=""
+        loading="lazy"
+        className="h-12 w-12 rounded-2xl border border-line bg-white object-contain p-1"
+      />
+    );
+  }
+  return (
+    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-coral font-display text-lg font-bold text-white">
+      {company.charAt(0)}
+    </span>
+  );
+}
 
 export default function Experience() {
-  const experiences = [
-    {
-      title: 'Full-Stack Developer',
-      company: 'Union Technologies',
-      period: '2023 - 2026',
-      achievements: [
-        'Built a React/TS CRM that improved sales execution: pipeline stages, call scheduling, reminders, scripts, meeting invites, and lead-to-client handoff.',
-        'Developed custom internal tools and automations (Node/Express) for data intake, validation, and admin workflows to reduce manual ops work.',
-        'Delivered and maintained union/client web properties across 125+ domains, including member areas, custom forms, and reliable launches.',
-        'Owned UI/UX and brand deliverables alongside development: social campaigns, print assets, event collateral, and merch-ready designs.',
-      ],
-    },
-    {
-      title: 'Web Developer',
-      company: 'Down Syndrome Foundation',
-      period: '2021 - 2023',
-      achievements: [
-        'Shipped multi-month builds across ~12 nonprofit domains, delivering large page sets from UX prototypes to production.',
-        'Launched program sites including Summer Camp registration and a Skills Development / workplace placement portal with complex forms and automated intake workflows.',
-        'Implemented donation and intake flows plus admin-friendly content updates with accessibility-first UI.',
-      ],
-    },
-    {
-      title: 'JavaScript Developer',
-      company: 'OPHEA',
-      period: '2020 - 2021',
-      achievements: [
-        'Built React and TypeScript internal tools and Node.js scripts to automate content updates used by 900+ Ontario schools.',
-        'Helped maintain OPHEA\'s React codebase by fixing UI bugs, improving forms, and polishing admin workflows.',
-        'Collaborated with non-technical staff to turn update requests into small React features and scripts.',
-      ],
-    },
-  ];
-
   return (
-    <section id="experience" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
-            Experience
-          </h2>
-          <div className="w-12 h-1 bg-teal-600 dark:bg-teal-400 rounded-full"></div>
-        </div>
+    <section id="experience" className="section bg-white border-y border-line">
+      <div className="container-page">
+        <SectionHeader
+          index="02"
+          eyebrow="Experience"
+          title="Seven years, five teams, one habit: shipping."
+          intro="From a student placement serving 1,000 schools to founding my own SaaS."
+        />
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-700"></div>
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="relative md:pl-12"
-              >
-                {/* Timeline dot */}
-                <div className="hidden md:block absolute left-0 top-2 w-2 h-2 -ml-1 rounded-full bg-teal-600 dark:bg-teal-400"></div>
-
-                {/* Content */}
-                <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                      {exp.title}
-                    </h3>
-                    <p className="text-teal-600 dark:text-teal-400 font-medium">
-                      {exp.company}
+        <ol className="divide-y divide-line border-t border-line">
+          {experience.map((job) => (
+            <li key={job.company}>
+              <Reveal className="grid gap-6 py-10 md:grid-cols-12 md:gap-10">
+                <div className="md:col-span-4 flex md:flex-col items-start gap-4">
+                  <Logo company={job.company} />
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-[0.14em] text-coral-dark">
+                      {job.period}
                     </p>
-                    <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mt-1">
-                      <FiCalendar size={14} />
-                      <span>{exp.period}</span>
-                    </div>
+                    <p className="mt-1 font-display text-xl font-bold text-ink">{job.company}</p>
+                    <p className="text-sm text-ink-muted">{job.location}</p>
                   </div>
+                </div>
 
-                  {/* Achievements */}
-                  <ul className="space-y-3">
-                    {exp.achievements.map((achievement, i) => (
-                      <li
-                        key={i}
-                        className="text-slate-600 dark:text-slate-300 flex items-start gap-3 text-sm leading-relaxed"
-                      >
-                        <span className="text-teal-600 dark:text-teal-400 mt-1.5 flex-shrink-0">
-                          <svg className="w-1.5 h-1.5 fill-current" viewBox="0 0 6 6">
-                            <circle cx="3" cy="3" r="3" />
-                          </svg>
-                        </span>
-                        <span>{achievement}</span>
+                <div className="md:col-span-8">
+                  <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-ink">
+                    {job.title}
+                  </h3>
+                  <p className="mt-2 text-lg text-ink-soft">{job.summary}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet} className="flex gap-3 leading-relaxed text-ink-soft">
+                        <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
+                        <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {job.tags.map((tag) => (
+                      <span key={tag} className="chip bg-cream">{tag}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
