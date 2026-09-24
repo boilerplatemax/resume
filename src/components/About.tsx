@@ -1,4 +1,4 @@
-import profilePhoto from '../assets/photos/about-portrait.png';
+import profilePhoto from "../assets/photos/about-portrait-2.png"
 
 export default function About() {
   return (
@@ -31,38 +31,59 @@ export default function About() {
           {/* Description */}
           <div className="md:col-span-3 space-y-6">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I'm a <span className="font-semibold text-slate-900 dark:text-white">Full-Stack Developer</span> and founder based in Victoria, BC.
-              I specialize in building production-ready applications with React and Next.js.
+              I'm a{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                Full-Stack Developer
+              </span>{" "}
+              and founder based in Victoria, BC. I specialize in building
+              production-ready applications with React and Next.js.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              As the founder of <span className="font-semibold text-slate-900 dark:text-white">UnionTab</span>, I built and monetized a multi-tenant SaaS
-              platform to over 2,000 active users, implementing Stripe subscriptions, tenant-aware roles, and
-              collaboration features.
+              As the founder of{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                UnionTab
+              </span>
+              , I built and monetized a multi-tenant SaaS platform to over 2,000
+              active users, implementing Stripe subscriptions, tenant-aware
+              roles, and collaboration features.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              At Union Technologies, I built a React/TypeScript CRM that improved sales execution
-              and delivered web properties across 125+ domains. I enjoy turning complex requirements into
-              clean, scalable solutions.
+              At Union Technologies, I built a React/TypeScript CRM that
+              improved sales execution and delivered web properties across 125+
+              domains. I enjoy turning complex requirements into clean, scalable
+              solutions.
             </p>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200 dark:border-slate-700">
               <div>
-                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">125+</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Domains Delivered</div>
+                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">
+                  125+
+                </div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">
+                  Domains Delivered
+                </div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">2,000+</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">SaaS Users</div>
+                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">
+                  2,000+
+                </div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">
+                  SaaS Users
+                </div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">5+</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Years Experience</div>
+                <div className="text-2xl font-bold text-teal-600 dark:text-teal-400">
+                  5+
+                </div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">
+                  Years Experience
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
